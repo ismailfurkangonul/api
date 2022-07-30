@@ -39,7 +39,7 @@ namespace apı.Controllers
                         //Bulunan bu değer to modelin içerisinde ilgili property e set edilecek.
 
                         PropertyInfo? propertytarget = toModel.GetType().GetProperty(prop.Name);
-                        if (propertytarget != null)
+                        if (propertytarget != null&&propertytarget.CanWrite)
                         {
                             propertytarget.SetValue(toModel, deger);
 
